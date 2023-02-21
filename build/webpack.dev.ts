@@ -3,7 +3,7 @@ import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import commonConfig from './webpack.common';
 
-const publicPath = 'http://localhost:3002/';
+const publicPath = '/';
 const config: Configuration = merge(commonConfig, {
   mode: 'development',
   output: {
@@ -11,14 +11,10 @@ const config: Configuration = merge(commonConfig, {
     assetModuleFilename: 'static/[name].[hash][ext]',
     chunkFilename: 'static/js/[name].chunk.js',
     publicPath,
-    library: 'release',
-    libraryTarget: 'umd',
   },
   devtool: 'inline-source-map',
   devServer: {
     port: 3002,
-    // 微前端模式下禁用热更新
-    hot: false,
     // 远程开发时可以通过 IP 访问
     host: '0.0.0.0',
     // 代理访问时跳过 host 检查

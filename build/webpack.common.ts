@@ -33,6 +33,7 @@ const config: WebpackConfig = {
         test: /\.(ts|js)x?$/i,
         exclude: [/node_modules/, /dist/],
         use: [
+          // 可选择是否经过babel转义
           {
             loader: 'babel-loader',
             options: {

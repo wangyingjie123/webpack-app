@@ -5,5 +5,5 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["build", "webpack.config.ts"]
+  "include": ["build"]
 }
