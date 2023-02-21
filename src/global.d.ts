@@ -1,5 +1,6 @@
 declare module '*.scss';
 declare module '*.svg';
+declare module '*.svg?inline';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';

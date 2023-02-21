@@ -25,12 +25,8 @@ const config: Configuration = merge(commonConfig, {
     assetModuleFilename: 'static/[name].[hash][ext]',
     filename: 'static/js/[name].[contenthash].js',
     publicPath,
-    // 对外输出的是一个库的时候需要
-    // library: {
-    //   name: 'app',
-    //   type: 'umd',
-    // },
   },
+  cache: false,
   optimization: {
     minimize: true,
     minimizer: [

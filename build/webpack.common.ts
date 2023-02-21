@@ -16,13 +16,11 @@ const config: WebpackConfig = {
   entry: path.join(PROJECT_ROOT, 'src/main'),
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, '../node_modules')],
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, '../src/'),
     },
   },
-  // 开发环境下使用文件系统持久化缓存加快构建速度
-  cache: devMode ? { type: 'filesystem' } : false,
   module: {
     rules: [
       {
@@ -72,11 +70,13 @@ const config: WebpackConfig = {
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack', 'url-loader'],
+        resourceQuery: /inline/,
+        use: ['@svgr/webpack'],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
-        type: 'asset',
+        test: /\.(png|jpg|gif|svg)$/i,
+        resourceQuery: { not: [/inline/] },
+        type: 'asset', // 在导出一个 data URI 和发送一个单独的文件之间自动选择，8kb
       },
     ],
   },
