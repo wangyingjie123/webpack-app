@@ -22,12 +22,13 @@ const config: Configuration = merge(commonConfig, {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    proxy: {
-      '/cgi/v1': {
-        target: 'http://test.portal.rdelivery.woa.com',
-        changeOrigin: true,
-      },
-    },
+    // 设置代理
+    // proxy: {
+    //   '/cgi/v1': {
+    //     target: 'http://xxxx',
+    //     changeOrigin: true,
+    //   },
+    // },
   },
   optimization: {
     // 开发环境不压缩

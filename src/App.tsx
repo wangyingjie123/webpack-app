@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { ConfigProvider, DatePicker, message } from 'antd';
+import { ConfigProvider, DatePicker, message, Image, Row, Col } from 'antd';
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import zhCN from 'antd/locale/zh_CN';
 import 'antd/dist/reset.css';
 import type { Dayjs } from 'dayjs';
+import testImg from '@/assets/image/test.png';
 import styles from './index.module.scss';
 
 dayjs.locale('zh-cn');
@@ -18,10 +19,15 @@ function App() {
   };
   return (
     <ConfigProvider locale={zhCN}>
-      <div className={styles.app}>
-        <DatePicker onChange={handleChange} />
-        <div style={{ marginTop: 16 }}>当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}</div>
-      </div>
+      <Row className={styles.app}>
+        <Col span={12}>
+          <Image width={200} src={testImg} />
+        </Col>
+        <Col span={12}>
+          <DatePicker onChange={handleChange} />
+          <div style={{ marginTop: 16 }}>当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}</div>
+        </Col>
+      </Row>
     </ConfigProvider>
   );
 }

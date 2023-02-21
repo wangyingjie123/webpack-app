@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server -c ./build/webpack.dev.ts",
-    "build": "webpack -c ./build/webpack.prod.ts",
+    "dev": "NODE_ENV=development webpack-dev-server -c ./build/webpack.dev.ts",
+    "build": "NODE_ENV=production webpack -c ./build/webpack.prod.ts",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.josn src",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.josn src --fix"
   },

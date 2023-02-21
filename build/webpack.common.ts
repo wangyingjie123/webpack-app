@@ -82,8 +82,9 @@ const config: WebpackConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(PROJECT_ROOT, './index.html'),
+      template: path.join(PROJECT_ROOT, './public/index.html'),
       hash: true,
+      favicon: path.resolve('./public/react.svg'),
     }),
     new ForkTsCheckerWebpackPlugin({
       async: false,

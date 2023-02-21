@@ -17,6 +17,7 @@ if (isReport) {
   plugins.push(new BundleAnalyzerPlugin({ analyzerMode: 'static' }));
 }
 const PROJECT_ROOT = path.resolve(__dirname, '../');
+process.env.NODE_ENV = 'production';
 const config: Configuration = merge(commonConfig, {
   mode: 'production',
   output: {
