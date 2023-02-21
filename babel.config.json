@@ -1,0 +1,29 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-react",
+      {
+        // 自动导入 JSX 转换而来的函数
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      // 类装饰器
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
+}
